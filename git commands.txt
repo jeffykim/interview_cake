@@ -1,5 +1,18 @@
 cd C:/Users/jeffk/Documents/interview_cake
 
+echo "# interview_cake" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/jeffykim/interview_cake.git
+git push -u origin master
+
+
+git add --all 
+or 
+
+git add .
+
 
 
 git remote -v
