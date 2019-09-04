@@ -1,0 +1,8 @@
+cd C:/Users/jeffk/Documents/interview_cake
+
+
+
+git remote -v
+git add .
+git commit
+git push origin master
