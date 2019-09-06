@@ -2,12 +2,41 @@ import unittest
 
 
 def merge_lists(my_list, alices_list):
-    new_list=[]
+    #determine the size of the new list
+    new_list_size= len(my_list)+len(alices_list)
+    print(new_list_size)
+    #instatiate the list
+    new_list=[None]*new_list_size
+    #count will be the index of the new_list index
+    count = 0
+    my_count=0
+    alice_count=0
+    while(count<new_list_size):
+        my_item= my_list[my_count]
+        alice_item=alices_list[alice_count]
 
-    while(len(my_list)!=0 or len(alices_list) !=0):
+        if(my_item>alice_item):
+            new_list[count]= alice_item
+            alice_count=alice_count+1
+        else:
+            new_list[count]=my_item
+            my_count= my_count+1
 
-        my_list_item = my_list.pop(0)
-        alices_list_item=alices_list.pop(0)
+            
+        count=count+1
+
+
+
+    # while(len(my_list)!=0 or len(alices_list) !=0):
+
+    #     my_list_item = my_list.pop(0)
+    #     alices_list_item=alices_list.pop(0)
+
+    #more pythonic way would be
+    # this would be in O(nlgn) time
+    # new_list= sorted(my_list+alices_list)
+
+
         
     #     my_list_item = my_list[0]
     #     alices_list_item = alices_list[0]
