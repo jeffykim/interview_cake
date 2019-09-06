@@ -12,17 +12,28 @@ def merge_lists(my_list, alices_list):
     my_count=0
     alice_count=0
     while(count<new_list_size):
-        my_item= my_list[my_count]
-        alice_item=alices_list[alice_count]
 
-        if(my_item>alice_item):
-            new_list[count]= alice_item
-            alice_count=alice_count+1
-        else:
-            new_list[count]=my_item
+        #need to handle 3 edge cases, where alice's list gets exhausted, my list gets exhausted, when a list is exhausted before the merge is complete
+        #this is a index out of bounds error. Meaning how do you handle that?
+        # handling edge case 1. when alice's list gets exhausted
+        if alice_count>=len(alices_list):
+            new_list[count] = my_list[my_count]
             my_count= my_count+1
 
-            
+        #handling the edge case 2 when my list gets exhausted
+
+        elif my_count>=len(my_list):
+            new_list[count]= alices_list[alice_count]
+            alice_count=alice_count+1
+
+        elif my_list[my_count]>alices_list[alice_count]:
+            new_list[count]= alices_list[alice_count]
+            alice_count=alice_count+1
+        else:
+            new_list[count]=my_list[my_count]
+            my_count= my_count+1
+
+
         count=count+1
 
 
